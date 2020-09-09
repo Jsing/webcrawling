@@ -12,3 +12,18 @@ c:\users\abdullateef\documents\visual studio 2013\Projects\CrawlerDemo\CrawlerDe
 c:\users\abdullateef\documents\visual studio 2013\Projects\CrawlerDemo\CrawlerDemo\obj\Debug\CrawlerDemo.csprojResolveAssemblyReference.cache
 c:\users\abdullateef\documents\visual studio 2013\Projects\CrawlerDemo\CrawlerDemo\obj\Debug\CrawlerDemo.exe
 c:\users\abdullateef\documents\visual studio 2013\Projects\CrawlerDemo\CrawlerDemo\obj\Debug\CrawlerDemo.pdb
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\CrawlerDemo.exe.config
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\CrawlerDemo.exe
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\CrawlerDemo.pdb
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\System.Net.Http.Extensions.dll
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\System.Net.Http.Primitives.dll
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\HtmlAgilityPack.pdb
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\HtmlAgilityPack.xml
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\System.Net.Http.Extensions.xml
+D:\Working\webcrawling\CrawlerDemo\bin\Debug\System.Net.Http.Primitives.xml
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.csproj.App.config
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.csprojAssemblyReference.cache
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.csproj.CoreCompileInputs.cache
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.csproj.CopyComplete
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.exe
+D:\Working\webcrawling\CrawlerDemo\obj\Debug\CrawlerDemo.pdb

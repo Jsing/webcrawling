@@ -22,7 +22,7 @@ namespace CrawlerDemo
         {
            
             //the url of the page we want to test
-            var url = "http://www.automobile.tn/neuf/bmw.3/";
+            var url = "https://www.automobile.tn/fr/neuf/bmw";
             var httpClient = new HttpClient();
             var html = await httpClient.GetStringAsync(url);
             var htmlDocument = new HtmlDocument();
@@ -32,55 +32,23 @@ namespace CrawlerDemo
             var cars = new List<Car>();
             var divs =
             htmlDocument.DocumentNode.Descendants("div")
-                .Where(node => node.GetAttributeValue("class", "").Equals("article_new_car article_last_modele")).ToList();
+                .Where(node => node.GetAttributeValue("class", "").Equals("versions-item")).ToList();
                        
             foreach(var div in divs)
             {
 
                 var car = new Car
                 {
-                     
+
                     Model = div.Descendants("h2").FirstOrDefault().InnerText,
-                    Price = div.Descendants("div").FirstOrDefault().InnerText,
-                    Link = div.Descendants("a").FirstOrDefault().ChildAttributes("href").FirstOrDefault().Value,
-                    ImageUrl = div.Descendants("img").FirstOrDefault().ChildAttributes("src").FirstOrDefault().Value
+                    Price = div.Descendants("div").FirstOrDefault().ChildNodes.Descendants("span").FirstOrDefault().InnerText
                 };
                 
                 cars.Add(car);              
             }
-            // Connection string 
-            string MyConnection = "DRIVER={MySQL ODBC 3.51 Driver};Server=localhost;Database=crawlerdemo;User Id=root;Password=";
-            //string MyConnection = "datasource=localhost;username=root;password=";  
-            OdbcConnection con = new OdbcConnection(MyConnection);
-            con.Open();
+            
+            // 파일에 쓰기.
 
-            try
-            {
-                int count = cars.Count;
-                foreach(var item in cars)
-                {
-                    for(int i = 0; i < count; i++)
-                    {
-                        string query = "insert into carinfor(Model,Price,Link,ImageUrl) value(?,?,?,?);";
-                        OdbcCommand cmd = new OdbcCommand(query, con);
-                        cmd.Parameters.Add("?Model", OdbcType.VarChar).Value = cars[i].Model;
-                        cmd.Parameters.Add("?Price", OdbcType.VarChar).Value = cars[i].Price;
-                        cmd.Parameters.Add("?Link", OdbcType.VarChar).Value = cars[i].Link;
-                        cmd.Parameters.Add("?ImageUrl", OdbcType.VarChar).Value = cars[i].ImageUrl;
-                        OdbcDataReader reader = cmd.ExecuteReader();
-                        reader.Close();
-                    }
-
-                    count = 0;
-                }
-            }
-            catch(Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }  
-           
-            con.Close();
             Console.WriteLine("Successful....");
             Console.WriteLine("Press Enter to exit the program...");
             ConsoleKeyInfo keyinfor = Console.ReadKey(true);
